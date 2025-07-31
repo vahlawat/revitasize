@@ -8,10 +8,10 @@
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
       // Replace these URLs with your app's actual store links
-      const androidAppUrl = "https://share.google/SdB673hmtwveUyxGC";
+      const androidAppUrl = "https://play.google.com/store/apps/details?id=io.ueat.revitasize&pcampaignid=web_share";
       const iosAppUrl = "https://apps.apple.com/ca/app/revitasize-ordering-app/id6471859230";
 
-      if (/android/i.test(userAgent)) {
+      if (userAgent.toLowerCase().indexOf("android") > -1) {
         window.location.href = androidAppUrl;
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         window.location.href = iosAppUrl;
