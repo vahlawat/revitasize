@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to App</title>
+  <script>
+    window.onload = function () {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Replace these URLs with your app's actual store links
+      const androidAppUrl = "https://share.google/SdB673hmtwveUyxGC";
+      const iosAppUrl = "https://apps.apple.com/ca/app/revitasize-ordering-app/id6471859230";
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = androidAppUrl;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = iosAppUrl;
+      } else {
+        // Optional: redirect to a website or show a message
+        document.getElementById("message").innerText = "Please open this page on a mobile device.";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p id="message">Redirecting you to the app store...</p>
+</body>
+</html>
